@@ -6,7 +6,7 @@ import close_icon from "../../assets/close-icon.svg";
 
 const Tasks = () => {
     return (
-        <div className="bg-cblue-dark text-white flex items-center w-[500px] rounded-lg p-3 relative">
+        <div className="bg-cblue-dark text-white flex items-center rounded-lg p-3 m-4 relative">
             <div className="flex absolute top-0 right-0 m-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
                     <g filter="url(#filter0_bd_2_86)">
@@ -32,7 +32,7 @@ const Tasks = () => {
                     in progress
                 </div>
             </div>
-            <div className="basis-1/12 h-fit">
+            <div className="basis-1/12 h-fit z-10">
                 {/* Features */}
                 <div className="flex justify-center items-center">
                     <div>
@@ -48,7 +48,7 @@ const Tasks = () => {
                     Learn React
                 </div>
                 <div className="font-mohave text-xs p-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
                 </div>
             </div>
         </div>

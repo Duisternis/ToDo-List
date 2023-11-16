@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Container = () => {
-    return (
-        <div className="rounded-3xl">
+const Container = (props) => {
 
+    return (
+        <div className={props.className}>
+            {props.children}
         </div>
     );
 }
