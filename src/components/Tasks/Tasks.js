@@ -85,7 +85,7 @@ const Tasks = () => {
                     Learn React
                 </div>
                 <div className="font-mohave text-xs m-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet con
+                    React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”. We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen.
                 </div>
             </div>
         </motion.div>
