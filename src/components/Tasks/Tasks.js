@@ -1,12 +1,49 @@
 import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 import correct_icon from "../../assets/correct-icon.svg";
 import save_icon from "../../assets/save-icon.svg";
 import close_icon from "../../assets/close-icon.svg";
+import start_icon from "../../assets/rocket.png";
+import end_icon from "../../assets/end-point.png";
 
 const Tasks = () => {
+
+    const dateRevealLeft = useAnimation();
+    const dateRevealRight = useAnimation();
+
+    const handleHoverStart = () => {
+        dateRevealLeft.set({ rotate: -90 })
+        dateRevealRight.set({ rotate: +90 })
+
+        dateRevealLeft.start({ x: -60 })
+        dateRevealRight.start({ x: 60 })
+    }
+
+    const handleHoverEnd = () => {
+        dateRevealLeft.start({ x: 0 })
+        dateRevealRight.start({ x: 0 })
+    }
+
+
     return (
-        <div className="bg-cblue-dark text-white flex items-center rounded-lg p-3 m-4 relative">
+        <motion.div className="bg-cblue-dark text-white flex items-center rounded-lg p-3 m-4 relative" onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
+
+
+            {/* Dates Due and Issue */}
+            <motion.div className="absolute -rotate-90 text-xs text-center bg-[#00FFF0] text-cblue-dark p-3 w-34 left-0 rounded-t-lg -z-10" animate={dateRevealLeft}>
+                <div className="relative font-semibold">
+                    <img src={start_icon} alt="Start Icon" className="w-6 absolute rotate-90 -right-10 -top-1" /> 12-07-2021
+                </div>
+            </motion.div>
+
+            <motion.div className="absolute rotate-90 text-xs text-center bg-[#00FFF0] text-cblue-dark p-3 w-34 right-0 rounded-t-lg -z-10" animate={dateRevealRight}>
+                <div className="relative font-semibold">
+                    <img src={end_icon} alt="End Icon" className="w-6 absolute -rotate-90 -left-10 -top-0.5" /> 21-07-2021
+                </div>
+            </motion.div>
+
+
             <div className="flex absolute top-0 right-0 m-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
                     <g filter="url(#filter0_bd_2_86)">
@@ -32,26 +69,26 @@ const Tasks = () => {
                     in progress
                 </div>
             </div>
-            <div className="basis-1/12 h-fit z-10">
+            <div className="h-fit z-10">
                 {/* Features */}
                 <div className="flex justify-center items-center">
                     <div>
-                        <img src={correct_icon} alt="correct-icon" className="cursor-pointer mx-2" />
-                        <img src={close_icon} alt="close icon" className="cursor-pointer mx-2 py-4" />
-                        <img src={save_icon} alt="save-icon" className="cursor-pointer mx-2" />
+                        <img src={correct_icon} alt="correct-icon" draggable="false" className="cursor-pointer mx-2 w-4" />
+                        <img src={close_icon} alt="close icon" draggable="false" className="cursor-pointer mx-2 py-4 w-4" />
+                        <img src={save_icon} alt="save-icon" draggable="false" className="cursor-pointer mx-2 w-4" />
                     </div>
                 </div>
             </div>
-            <div className="pl-3">
+            <div className="ml-3 w-[85%]">
                 {/* Content */}
-                <div className="font-montez text-5xl p-2">
+                <div className="font-montez text-5xl m-2">
                     Learn React
                 </div>
-                <div className="font-mohave text-xs p-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit
+                <div className="font-mohave text-xs m-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet conm ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet con
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
